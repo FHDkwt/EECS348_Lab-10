@@ -20,3 +20,4 @@ $(TARGET): $(OBJECTS)
 # removing all generated files
 clean:
 	rm -f $(OBJECTS) $(TARGET)
+
