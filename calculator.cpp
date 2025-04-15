@@ -3,6 +3,7 @@
 #include "calculator.hpp"
 #include <fstream>
 #include <cctype>
+#include <vector>
 // defining function to parse pre-validated string as double number
 double parse_number(const std::string &expression) {
     // initializing result to store parsed number
@@ -46,7 +47,7 @@ double parse_number(const std::string &expression) {
 }
 
 // reading strings from a file, one per line into vector and returning empty vector if file cannot be opened
-std::vector<std::string> readNumbers(const std::string& filename) {
+std::vector<std::string> read_numbers(const std::string& filename) {
     // vector to store read strings
     std::vector<std::string> numbers;
     // opening input file
@@ -73,7 +74,7 @@ std::vector<std::string> readNumbers(const std::string& filename) {
     return numbers;
 }
 // validating if a string represents a valid double number   Format: (+|-)A(.B), where A is digits .B is optional but must have at least one digit 
-bool isValidDouble(const std::string& str) {
+bool is_validDouble(const std::string& str) {
     // checking for empty string
     if (str.empty())
     {
@@ -131,7 +132,7 @@ bool isValidDouble(const std::string& str) {
 }
 // defining function adding two string-formatted numbers and returning result as string
 // assuming inputs are valid doubles 
-std::string addStrings(const std::string& num1, const std::string& num2) {
+std::string add_strings(const std::string& num1, const std::string& num2) {
     // declaring variables to store integer and decimal parts
     std::string int1, dec1, int2, dec2;
     // initializing neg1 flag to track signs
