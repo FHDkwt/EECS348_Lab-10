@@ -141,11 +141,11 @@ std::string add_strings(const std::string& num1, const std::string& num2) {
     // initializingdot1 to split first number into integer and decimal part
     size_t dot1 = num1.find('.');
     int1 = (neg1 ? num1.substr(1) : num1).substr(0, dot1 != std::string::npos ? dot1 : num1.length());
-    dec1 = (dot1 != std::string::nposition) ? num1.substr(dot1 + 1) : "";
+    dec1 = (dot1 != std::string::npos) ? num1.substr(dot1 + 1) : "";
     // initializing dot2 to split second number into integer and decimal part
     size_t dot2 = num2.find('.');
     int2 = (neg2 ? num2.substr(1) : num2).substr(0, dot2 != std::string::npos ? dot2 : num2.length());
-    dec2 = (dot2 != std::string::nposition) ? num2.substr(dot2 + 1) : "";
+    dec2 = (dot2 != std::string::npos) ? num2.substr(dot2 + 1) : "";
     // initializing maxDec to align decimal parts by padding with zeros
     size_t maxDec = std::max(dec1.length(),dec2.length());
     dec1 += std::string(maxDec-dec1.length(),'0');
@@ -163,14 +163,14 @@ std::string add_strings(const std::string& num1, const std::string& num2) {
     // adding decimal point if decimal parts
     if (maxDec>0)
     {
-        result = "."+result;
+        result ="."+result;
     }
     // initializing maxInt,int1,int2 to align integer parts by padding with zeros
     int maxInt = std::max(int1.length(),int2.length());
     int1 = std::string(maxInt-int1.length(),'0')+int1;
     int2 = std::string(maxInt-int2.length(),'0')+int2;
     // adding integer parts from right to left
-    for (int i = maxInt-1;i>=0;i--) 
+    for (int i=maxInt-1;i>=0;i--) 
     {
         int sum = (int1[i]-'0')+(int2[i]-'0')+carry;
         carry = sum/10;
@@ -182,7 +182,7 @@ std::string add_strings(const std::string& num1, const std::string& num2) {
         result = "1"+result;
     }
     // normalizing result by removing trailing zeros in decimal part
-    if (result.find('.') != std::string::nposition) 
+    if (result.find('.') !=std::string::npos) 
     {
         while (result.back() =='0')
         {
