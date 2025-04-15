@@ -140,11 +140,11 @@ std::string add_strings(const std::string& num1, const std::string& num2) {
     bool neg1 = num1[0] =='-',neg2 =num2[0] =='-';
     // initializingdot1 to split first number into integer and decimal part
     size_t dot1 = num1.find('.');
-    int1 = (neg1 ? num1.substr(1) : num1).substr(0, dot1 != std::string::nposition ? dot1 : num1.length());
+    int1 = (neg1 ? num1.substr(1) : num1).substr(0, dot1 != std::string::npos ? dot1 : num1.length());
     dec1 = (dot1 != std::string::nposition) ? num1.substr(dot1 + 1) : "";
     // initializing dot2 to split second number into integer and decimal part
     size_t dot2 = num2.find('.');
-    int2 = (neg2 ? num2.substr(1) : num2).substr(0, dot2 != std::string::nposition ? dot2 : num2.length());
+    int2 = (neg2 ? num2.substr(1) : num2).substr(0, dot2 != std::string::npos ? dot2 : num2.length());
     dec2 = (dot2 != std::string::nposition) ? num2.substr(dot2 + 1) : "";
     // initializing maxDec to align decimal parts by padding with zeros
     size_t maxDec = std::max(dec1.length(),dec2.length());
