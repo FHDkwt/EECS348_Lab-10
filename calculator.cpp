@@ -32,7 +32,7 @@ double parse_number(const std::string &expression) {
     // parsing decimal part if present
     if (position<expression.length() && expression[position] =='.') 
     {
-        position ition ition ++;
+        position++;
         // initializing fraction multiplier for decimal places
         double fraction =0.1;
         while (position<expression.length() && std::isdigit(expression[position])) 
@@ -135,7 +135,7 @@ bool is_validDouble(const std::string& str) {
 // assuming inputs are valid doubles 
 std::string add_strings(const std::string& num1, const std::string& num2) {
     // declaring variables to store integer and decimal parts
-    std::string int1,dec1,int2 dec2;
+    std::string int1,dec1,int2,dec2;
     // initializing neg1 flag to track signs
     bool neg1 = num1[0] =='-',neg2 =num2[0] =='-';
     // initializingdot1 to split first number into integer and decimal part
