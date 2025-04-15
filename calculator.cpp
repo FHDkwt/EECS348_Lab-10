@@ -1,6 +1,7 @@
 // file containing all functions definitions
 // including header file and all required libraires
 #include "calculator.hpp"
+#include <iostream>
 #include <fstream>
 #include <cctype>
 #include <vector>
