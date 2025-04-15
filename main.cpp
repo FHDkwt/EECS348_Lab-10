@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "calculator.hpp"
+
 // main function to process numbers from file and perform addition
 int main(int argc, char *argv[]) {
     // declaring filename variable to store input file name 
